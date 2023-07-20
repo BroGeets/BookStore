@@ -1,0 +1,19 @@
+/* @media screen and (min-width: 786px) {
+  .fit {height: 250px;}
+}
+
+@media screen and (max-width: 786px) {
+  .fit {height: 200px;}
+}
+
+@media screen and (max-width: 650px) {
+  .fit {height: 180px;}
+}
+
+@media screen and (max-width: 480px) {
+  .fit {height: 120px;}
+} */
+
+.fit{
+    margin: 10px auto;
+}

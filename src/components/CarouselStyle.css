@@ -1,0 +1,45 @@
+.custom-prev-arrow,
+.custom-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  /* Add more styling as needed */
+}
+
+.custom-prev-arrow {
+  left: 10px;
+  outline: 2px black;
+}
+
+.custom-next-arrow {
+  right: 10px;
+  outline: 2px black;
+}
+
+@media screen and (min-width: 786px) {
+  .item {
+    height: 225px;
+    width:150px;
+    /* margin-left: 0; */
+    /* margin-right:0; */
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .item {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .item {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .item {
+    height: 120px;
+  }
+}
