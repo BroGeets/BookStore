@@ -106,17 +106,31 @@ function Book() {
     );
   };
 
+  // const handleAddBook = async () => {
+  //   try {
+  //     const libraryBooksRef = collection(
+  //       doc(db, "Carts", cartId),
+  //       "LibraryBooks"
+  //     );
+  //     await addDoc(libraryBooksRef, {
+  //       BookId: id,
+  //     });
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  
+  // const [libBooks, setLibBooks] = useState([]);
+
   const handleAddBook = async () => {
     try {
-      const libraryBooksRef = collection(
-        doc(db, "Carts", cartId),
-        "LibraryBooks"
-      );
-      await addDoc(libraryBooksRef, {
-        BookId: id,
-      });
-    } catch (error) {
-      console.error(error);
+      const libBooksRef = collection(doc(db, "Carts"));
+      const libBooks = await getDocs(libBooksRef);
+      console.log("Add BookId to Carts.LibraryBooks, I'll get back to this later")
+    } catch (err) {
+      console.log("Error adding books to cart");
+      console.error(err);
     }
   };
 

@@ -8,6 +8,7 @@ import Book from "./components/Book";
 import AddBook from "./components/AddBook";
 import Explore from "./components/Explore";
 import Library from "./components/Library";
+import WriteChapter from "./components/WriteChapter";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/signin" element={<SignIn />} />
         <Route exact path="/addbook" element={<AddBook />} />
         <Route exact path="/library" element={<Library />} />
+        <Route exact path="/writechapter" element={<WriteChapter />} />
       </Routes>
       <Footer />
     </>

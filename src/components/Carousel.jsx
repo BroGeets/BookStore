@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,7 +10,6 @@ import {
 import "./CarouselStyle.css";
 import { db } from "../config/firebase";
 import { getDocs, collection } from "firebase/firestore";
-// import {Book} from "./Book";
 import { useNavigate } from "react-router-dom";
 
 function Books() {
@@ -37,10 +35,19 @@ function Books() {
     fetchBooks();
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleBookClick = (bookId) => {
+    navigate(`/book/${bookId}`);
+  };
+
   const CustomPrevArrow = (props) => {
     const { onClick } = props;
     return (
-      <div className="custom-prev-arrow" onClick={onClick}>
+      <div
+        className="custom-arrow custom-prev-arrow"
+        onClick={onClick}
+        style={{ zIndex: 1 }}>
         <FontAwesomeIcon icon={faChevronLeft} />
       </div>
     );
@@ -49,17 +56,20 @@ function Books() {
   const CustomNextArrow = (props) => {
     const { onClick } = props;
     return (
-      <div className="custom-next-arrow" onClick={onClick}>
+      <div
+        className="custom-arrow custom-next-arrow"
+        onClick={onClick}
+        style={{ zIndex: 1 }}>
         <FontAwesomeIcon icon={faChevronRight} />
       </div>
     );
   };
 
-  const settings = {
+  const responsiveSettings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
@@ -84,23 +94,40 @@ function Books() {
     //   },
     // ],
   };
-  const navigate = useNavigate();
 
-  const handleBookClick = (bookId) => {
-    navigate(`/book/${bookId}`);
-  };
+   const settings = {
+     ...responsiveSettings,
+     slidesToShow: 4,
+     responsive: [
+       {
+         breakpoint: 1200,
+         settings: {
+           slidesToShow: 4,
+         },
+       },
+       {
+         breakpoint: 768,
+         settings: {
+           slidesToShow: 3,
+         },
+       },
+       {
+         breakpoint: 480,
+         settings: {
+           slidesToShow: 3,
+         },
+       },
+     ],
+   };
 
   return (
-    <div
-      // style={{ maxWidth: "800px" }}
-      className="container">
+    <div className="carousel-container">
       <Slider {...settings}>
         {events.map((event) => (
           <div
             key={event.id}
-            style={{ width: "50px" }}
-            className="mx-3 my-3 carosel-item"
-            height="300px">
+            className="carousel-item mx-3 my-3 d-flex justify-content-center"
+            style={{ zIndex: 0 }}>
             <img
               src={event.cover}
               alt={event.title}

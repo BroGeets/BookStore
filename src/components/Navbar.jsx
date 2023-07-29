@@ -39,9 +39,9 @@ function Navbar() {
               <a className="nav-link" href="./library">
                 Library
               </a>
-              {/* <a className="nav-link" href="#">
-                About Us
-              </a> */}
+              <a className="nav-link" href="./writechapter">
+                Add Chapter
+              </a>
             </div>
             <div>
               <a className="nav-link" href="./signin">

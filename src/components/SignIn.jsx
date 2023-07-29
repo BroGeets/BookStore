@@ -39,7 +39,7 @@ function SignIn() {
 
   const cartRef = collection(db, "Carts");
   const [uid, setUid] = useState(null);
-
+  const [libBooks, setLibBooks] = useState([]);
   // const createCart = async () => {
   //   try {
   //     if (!uid) {
@@ -58,7 +58,7 @@ function SignIn() {
   //     console.log(error);
   //   }
   // };
-
+  
   useEffect(() => {
     // Listen for changes in the user's authentication state
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -75,14 +75,8 @@ function SignIn() {
             if (cartQuerySnapshot.empty) {
               await addDoc(collection(db, "Carts"), {
                 AuthorID: user.uid,
+                LibraryBooks : libBooks,
               });
-              //  const newCollectionId = newCollectionRef.id;
-              //  const subcollectionRef = collection(
-              //    db,
-              //    "Carts",
-              //    newCollectionId,
-              //    "LibraryBooks"
-              //  );
             }
           } catch (error) {
             console.log(error);
