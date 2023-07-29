@@ -9,6 +9,7 @@ import AddBook from "./components/AddBook";
 import Explore from "./components/Explore";
 import Library from "./components/Library";
 import WriteChapter from "./components/WriteChapter";
+import MyWorks from "./components/MyWorks";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/book/:id" element={<Book />} />
         <Route exact path="/signin" element={<SignIn />} />
         <Route exact path="/addbook" element={<AddBook />} />
+        <Route exact path="/myworks" element={<MyWorks />} />
         <Route exact path="/library" element={<Library />} />
         <Route exact path="/writechapter" element={<WriteChapter />} />
       </Routes>

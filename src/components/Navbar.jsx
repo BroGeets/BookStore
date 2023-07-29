@@ -27,26 +27,38 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-link active" aria-current="page" href="/">
-                Home
-              </a>
-              <a className="nav-link" href="./explore">
-                Explore
-              </a>
-              <a className="nav-link" href="./addbook">
-                Add Books
-              </a>
-              <a className="nav-link" href="./library">
-                Library
-              </a>
-              <a className="nav-link" href="./writechapter">
-                Add Chapter
-              </a>
-            </div>
-            <div>
-              <a className="nav-link" href="./signin">
-                Sign In
-              </a>
+              <ul className="navbar-nav">
+                <li>
+                  <a className="nav-link active" aria-current="page" href="/">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a className="nav-link" href="./explore">
+                    Explore
+                  </a>
+                </li>
+                <li>
+                  <a className="nav-link" href="./myworks">
+                    My Works
+                  </a>
+                </li>
+                <li>
+                  <a className="nav-link" href="./library">
+                    Library
+                  </a>
+                </li>
+                <li>
+                  <a className="nav-link" href="./writechapter">
+                    Add Chapter
+                  </a>
+                </li>
+                <li>
+                  <a className="nav-link" href="./signin">
+                    Sign In
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
